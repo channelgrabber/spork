@@ -1,7 +1,7 @@
 {
-    "name": "kriswallsmith/spork",
+    "name": "channelgrabber/spork",
     "description": "Asynchronous PHP",
-    "homepage": "https://github.com/kriswallsmith/spork",
+    "homepage": "https://github.com/channelgrabber/spork",
     "type": "library",
     "license": "MIT",
     "authors": [
@@ -9,6 +9,10 @@
             "name": "Kris Wallsmith",
             "email": "kris.wallsmith@gmail.com",
             "homepage": "http://kriswallsmith.net/"
+        },
+        {
+            "name": "Nick Peirson",
+            "email": "nickpeirson@gmail.com"
         }
     ],
     "require": {
@@ -16,6 +20,9 @@
         "ext-pcntl": "*",
         "ext-posix": "*",
         "symfony/event-dispatcher": "*"
+    },
+    "replace": {
+        "kriswallsmith/spork": "*"
     },
     "autoload": {
         "psr-0": { "Spork": "src/" }
