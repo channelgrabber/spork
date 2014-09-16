@@ -165,10 +165,18 @@ class ProcessManager
         }
     }
 
-    public function wait($hang = true)
+    public function wait()
     {
+        $runningForks = count($this->forks);
         foreach ($this->forks as $fork) {
-            $fork->wait($hang);
+            if ($fork->isExited()) {
+                $runningForks--;
+            }
+        }
+        while ($runningForks > 0) {
+            if ($this->waitForNext(true)) {
+                $runningForks--;
+            }
         }
     }
 
